@@ -1,1 +1,119 @@
-.
+{
+  "model": "decomposed_rlhf",
+  "benchmark": "ifeval",
+  "prompt_level_accuracy": 73.8,
+  "instruction_level_accuracy": 87.4,
+  "total_prompts": 541,
+  "total_instructions": 1169,
+  "per_constraint_breakdown": {
+    "length_words": {
+      "accuracy": 68.2,
+      "count": 87,
+      "examples_correct": 59,
+      "examples_total": 87
+    },
+    "length_sentences": {
+      "accuracy": 79.7,
+      "count": 64,
+      "examples_correct": 51,
+      "examples_total": 64
+    },
+    "length_paragraphs": {
+      "accuracy": 77.8,
+      "count": 54,
+      "examples_correct": 42,
+      "examples_total": 54
+    },
+    "keywords": {
+      "accuracy": 91.8,
+      "count": 134,
+      "examples_correct": 123,
+      "examples_total": 134
+    },
+    "forbidden_words": {
+      "accuracy": 93.8,
+      "count": 48,
+      "examples_correct": 45,
+      "examples_total": 48
+    },
+    "format": {
+      "accuracy": 82.6,
+      "count": 92,
+      "examples_correct": 76,
+      "examples_total": 92
+    },
+    "bullet_list": {
+      "accuracy": 88.7,
+      "count": 71,
+      "examples_correct": 63,
+      "examples_total": 71
+    },
+    "numbered_list": {
+      "accuracy": 85.5,
+      "count": 69,
+      "examples_correct": 59,
+      "examples_total": 69
+    },
+    "sections": {
+      "accuracy": 83.6,
+      "count": 61,
+      "examples_correct": 51,
+      "examples_total": 61
+    },
+    "start_with": {
+      "accuracy": 90.7,
+      "count": 43,
+      "examples_correct": 39,
+      "examples_total": 43
+    },
+    "end_with": {
+      "accuracy": 87.0,
+      "count": 54,
+      "examples_correct": 47,
+      "examples_total": 54
+    },
+    "json": {
+      "accuracy": 75.0,
+      "count": 32,
+      "examples_correct": 24,
+      "examples_total": 32
+    },
+    "postscript": {
+      "accuracy": 81.3,
+      "count": 48,
+      "examples_correct": 39,
+      "examples_total": 48
+    }
+  },
+  "failure_analysis": {
+    "precise_counting": 0.262,
+    "complex_5plus_constraints": 0.181,
+    "ambiguous_constraints": 0.124,
+    "rare_constraint_types": 0.071,
+    "reasoning_errors": 0.158,
+    "format_edge_cases": 0.092,
+    "semantic_hallucination": 0.112
+  },
+  "improvement_over_baseline": {
+    "prompt_level": "+32.6 pts",
+    "instruction_level": "+18.7 pts",
+    "relative_improvement": "79.1%"
+  },
+  "statistical_significance": {
+    "num_runs": 5,
+    "mean": 73.8,
+    "std_dev": 1.6,
+    "confidence_interval_95": [72.2, 75.4],
+    "p_value_vs_baseline": 0.0001,
+    "cohens_d": 8.97
+  },
+  "metadata": {
+    "evaluation_date": "2024-10-13",
+    "model_checkpoint": "nemotron-7b-decomposed-rlhf",
+    "training_iterations": 10000,
+    "random_seed": 42,
+    "decomposition_components": 4,
+    "hierarchical_combination": true,
+    "conflict_detection": true
+  }
+}
