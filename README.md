@@ -95,13 +95,6 @@ This is exploratory research - prototype quality code, not production-ready:
 3. **Automatic discovery**: Learn decomposition structure from data
 4. **Constrained decoding**: Combine learned soft constraints with algorithmic hard constraints
 
-## Applying to Tavus-Style Avatars
-
-The framework naturally extends to multimodal generation:
-R_visual:  Frame-level image quality, facial realism
-R_audio:   Speech clarity, prosody naturalness
-R_sync:    Lip-audio alignment, expression timing
-R_semantic: Content relevance, appropriate emotion
 
 Hierarchical combination ensures:
 - Safety/appropriateness is gated
