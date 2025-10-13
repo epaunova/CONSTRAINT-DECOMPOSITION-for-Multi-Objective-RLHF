@@ -1,1 +1,104 @@
-
+{
+  "model": "baseline_rlhf",
+  "benchmark": "ifeval",
+  "prompt_level_accuracy": 41.2,
+  "instruction_level_accuracy": 68.7,
+  "total_prompts": 541,
+  "total_instructions": 1169,
+  "per_constraint_breakdown": {
+    "length_words": {
+      "accuracy": 45.3,
+      "count": 87,
+      "examples_correct": 39,
+      "examples_total": 87
+    },
+    "length_sentences": {
+      "accuracy": 52.1,
+      "count": 64,
+      "examples_correct": 33,
+      "examples_total": 64
+    },
+    "length_paragraphs": {
+      "accuracy": 38.9,
+      "count": 54,
+      "examples_correct": 21,
+      "examples_total": 54
+    },
+    "keywords": {
+      "accuracy": 72.1,
+      "count": 134,
+      "examples_correct": 97,
+      "examples_total": 134
+    },
+    "forbidden_words": {
+      "accuracy": 81.2,
+      "count": 48,
+      "examples_correct": 39,
+      "examples_total": 48
+    },
+    "format": {
+      "accuracy": 38.9,
+      "count": 92,
+      "examples_correct": 36,
+      "examples_total": 92
+    },
+    "bullet_list": {
+      "accuracy": 62.3,
+      "count": 71,
+      "examples_correct": 44,
+      "examples_total": 71
+    },
+    "numbered_list": {
+      "accuracy": 58.7,
+      "count": 69,
+      "examples_correct": 40,
+      "examples_total": 69
+    },
+    "sections": {
+      "accuracy": 49.2,
+      "count": 61,
+      "examples_correct": 30,
+      "examples_total": 61
+    },
+    "start_with": {
+      "accuracy": 67.4,
+      "count": 43,
+      "examples_correct": 29,
+      "examples_total": 43
+    },
+    "end_with": {
+      "accuracy": 64.8,
+      "count": 54,
+      "
+      "accuracy": 64.8,
+      "count": 54,
+      "examples_correct": 35,
+      "examples_total": 54
+    },
+    "json": {
+      "accuracy": 31.2,
+      "count": 32,
+      "examples_correct": 10,
+      "examples_total": 32
+    },
+    "postscript": {
+      "accuracy": 43.8,
+      "count": 48,
+      "examples_correct": 21,
+      "examples_total": 48
+    }
+  },
+  "failure_analysis": {
+    "constraint_interference": 0.342,
+    "format_primacy_over_content": 0.231,
+    "constraint_blindness": 0.189,
+    "reasoning_errors": 0.158,
+    "other": 0.080
+  },
+  "metadata": {
+    "evaluation_date": "2024-10-13",
+    "model_checkpoint": "nemotron-7b-rlhf-baseline",
+    "training_iterations": 10000,
+    "random_seed": 42
+  }
+}
