@@ -1,0 +1,81 @@
+# Constraint Decomposition PPO Training Configuration
+
+# Model settings
+model:
+  policy_model: "nvidia/nemotron-7b"
+  reward_models:
+    semantic: "./reward_models/semantic"
+    structural: "./reward_models/structural"
+    format: "./reward_models/format"
+    meta: "./reward_models/meta"
+  conflict_detector: "./models/conflict_detector"
+
+# Training hyperparameters
+training:
+  learning_rate: 1.0e-6
+  batch_size: 512
+  mini_batch_size: 64
+  gradient_accumulation_steps: 8
+  num_train_steps: 10000
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+
+# PPO specific
+ppo:
+  epochs: 4
+  kl_penalty: 0.02
+  gamma: 1.0
+  lam: 0.95
+  cliprange: 0.2
+  cliprange_value: 0.2
+  vf_coef: 0.1
+  entropy_coef: 0.01
+
+# Reward combination weights
+reward_weights:
+  alpha: 0.35  # semantic
+  beta: 0.25   # structural
+  gamma: 0.25  # format
+  delta: 0.15  # meta
+
+# Safety settings
+safety:
+  use_safety_gate: true
+  safety_threshold: -5.0
+
+# Conflict adaptation
+conflict:
+  use_conflict_adaptation: true
+  boost_semantic_on_conflict: 0.15
+
+# Generation settings
+generation:
+  max_new_tokens: 256
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+
+# Logging and checkpointing
+logging:
+  log_with: "wandb"
+  project_name: "constraint-decomposition"
+  logging_steps: 100
+  eval_steps: 500
+  save_steps: 1000
+
+# Output
+output:
+  output_dir: "./checkpoints"
+  save_total_limit: 3
+
+# Hardware
+hardware:
+  bf16: true
+  tf32: true
+  gradient_checkpointing: true
+
+# Distributed training
+distributed:
+  deepspeed: "configs/deepspeed_zero2.json"
+  local_rank: -1
